@@ -15,7 +15,7 @@ It proves whether the weather app is accurate or "lying."
 # We use @st.cache_data so it loads fast and doesn't reload every time you click
 @st.cache_data
 def load_data():
-    df = pd.read_csv("weather_audit.csv")
+    df = pd.read_csv("Weather_Project/weather_audit.csv")
     df['timestamp_now'] = pd.to_datetime(df['timestamp_now'])
     return df
 
@@ -49,4 +49,5 @@ try:
         st.dataframe(df)
 
 except FileNotFoundError:
+
     st.error("Data file not found. Please ensure weather_audit.csv is in the repository.")
